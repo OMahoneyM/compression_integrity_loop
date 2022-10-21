@@ -12,7 +12,7 @@ This script checks the integrity of all `.gz` files in a user provided directory
 Before using this script, open it in a text editor and add the absolute path to the directory containing the `.gz` files between the quotes on line 4.
 - Ex:`DIR="/User/Garfunkel/Documents/Example_Project/"`
 
-To run it:
+Execute the script be running:
 `$ bash comp_check.sh`
 
 ## gz_array_builder.sh
