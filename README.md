@@ -13,13 +13,16 @@ Before using this script, open it in a text editor and add the absolute path to 
 - Ex:`DIR="/User/Garfunkel/Documents/Example_Project/"`
 
 Execute the script be running:
-`$ bash comp_check.sh`
-
+```
+$ bash comp_check.sh
+```
 ## gz_array_builder.sh
 Upload `gz_array_builder.sh` to an HPC and place it into your project's directory. 
 
 Run the below command to generate the job array files: Replace `INPUT` and `OUTPUT` with the directory path to your fastq.gz files and results, respectively.
-`$ bash gz_array_builder.sh -i INPUT -o OUTPUT`
+```
+$ bash gz_array_builder.sh -i INPUT -o OUTPUT
+```
 
 Upon successful completion you will receive a message saying that `qsub_gz_check_array.sou` and `gz_check.sh` were generated. Run the `ls -lah` command to check if `gz_check.sh` is executable. The filename will appear green and its line will begin with `-rwxrwxr-x`.
 
@@ -29,10 +32,14 @@ Upon successful completion you will receive a message saying that `qsub_gz_check
 If you would like to modify any parameters or resources assigned to the jobs do so in`qsub_gz_check_array.sou`. You will generally not need to edit `gz_check.sh` unless you would like to rename the resulting log files or error directory. 
 
 To initiate the job array enter the following command:
-`$ source qsub_gz_check_array.sou`
+```
+$ source qsub_gz_check_array.sou
+```
 
 Check your jobs status using:
-`$ qstat`
+```
+$ qstat
+```
 
 Upon completion this job will write 2 files to the OUTPUT directory containing a list of the passed and corrupted gz files.
 - gz_check.log
@@ -43,5 +50,7 @@ All corrupt gz files will be moved to the newly created `corrupt_files` director
 The array will produce a log file for each execution of the script. It is important to spot check these to make sure there wasn't an unforeseen issue with the run.
 
 To access the help menu run:
-`$ bash gz_array_builder.sh -h`
+```
+$ bash gz_array_builder.sh -h
+```
  
