@@ -9,6 +9,12 @@ Transferring large datasets from cloud infrastructure to local machines comes wi
 ## comp_check.sh
 This script checks the integrity of all `.gz` files in a user provided directory path and outputs a log file containing the names of all the successful files. If any compressed files are corrupted, they and the error log are moved into a newly created *corrupt_files* directory.
 
+Before using this script, open it in a text editor and add the absolute path to the directory containing the `.gz` files between the quotes on line 4.
+- Ex:`DIR="/User/Garfunkel/Documents/Example_Project/"`
+
+To run it:
+`$ bash comp_check.sh`
+
 ## gz_array_builder.sh
 Upload `gz_array_builder.sh` to an HPC and place it into your project's directory. 
 
